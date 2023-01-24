@@ -1,0 +1,225 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #023436;
+  font-size: 18px;
+}
+
+.wrapper {
+  width: 85%;
+  margin: 0px auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  padding: 15px 15px;
+}
+header nav ul :last-child {
+  padding-right: 0px;
+}
+header nav ul a:hover {
+  background-image: linear-gradient(to right, #2EC4B6, #1C5E87);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header #hero {
+  padding: 50px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+header #hero #main-heading {
+  width: 40%;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  justify-content: center;
+}
+header #hero #main-heading h1 {
+  font-size: 32px;
+}
+header #hero #main-heading p {
+  margin: 10px 0px 30px 0px;
+}
+header #hero #main-heading #heading-button a {
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  background-image: linear-gradient(to left, #2EC4B6, #1C5E87);
+  color: white;
+  border-radius: 24px;
+  background-image: none;
+  color: #023436;
+  border: 2.5px solid #023436;
+}
+header #hero #main-heading #heading-button a:hover {
+  box-shadow: 1px 2px 1px 1px #1C5E87;
+  transition: 0.25s;
+  background-image: linear-gradient(to top right, #1C5E87, #2EC4B6);
+  background-size: 100%;
+  color: white;
+}
+header #hero #heading-blob {
+  width: 45%;
+  height: 33vw;
+  background-image: linear-gradient(to right, #2EC4B6, #1C5E87);
+  border-radius: 71% 29% 37% 63%/59% 25% 75% 41%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header #hero #heading-blob #heading-slider {
+  display: flex;
+  flex-direction: column;
+}
+header #hero #heading-blob #heading-slider #printed-products .img {
+  width: 70%;
+  height: 70%;
+  margin: 0px auto;
+}
+header #hero #heading-blob #heading-slider #printed-products .img img {
+  width: 100%;
+}
+
+main #sekcija-usluge {
+  text-align: center;
+}
+main #sekcija-usluge h2 {
+  margin-bottom: 0px;
+}
+main #sekcija-usluge #usluge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  height: 600px;
+}
+main #sekcija-usluge #usluge .usluge-blok {
+  width: 20%;
+  height: 70%;
+  border-radius: 33% 67% 29% 71%/75% 47% 53% 25%;
+  transition: 1s;
+}
+main #sekcija-usluge #usluge .usluge-blok .ikonica {
+  height: 9vw;
+  width: 9vw;
+  margin: 5% auto;
+}
+main #sekcija-usluge #usluge .usluge-blok #ikonica_1 img {
+  height: 8vw;
+  margin-top: 10px;
+}
+main #sekcija-usluge #usluge .usluge-blok #ikonica_4 img {
+  margin-top: 25px;
+}
+main #sekcija-usluge #usluge .usluge-blok ul {
+  width: 85%;
+  margin: 10px auto;
+  text-align: left;
+  list-style-type: disc;
+}
+main #sekcija-usluge #usluge .usluge-blok ul li {
+  font-size: 16px;
+}
+main #sekcija-usluge #usluge .usluge-blok:hover {
+  background-image: linear-gradient(to top right, #1C5E87, #2EC4B6);
+  background-size: 100%;
+  color: white;
+  border-radius: 24px;
+  height: 80%;
+}
+main #sekcija-usluge #usluge .usluge-blok:hover img {
+  transform: scale(1.1, 1.1);
+  transition: 1s;
+  background-image: linear-gradient(to right, #2EC4B6, #1C5E87);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+main #sekcija-usluge #usluge .usluge-blok:hover h3 {
+  color: white;
+  transition: 0.5s;
+}
+main #sekcija-usluge #usluge .usluge-blok:hover ul li {
+  color: white;
+  transition: 0.5s;
+}
+main #galerija {
+  text-align: center;
+}
+main #galerija #galerija-slike {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+main #galerija #galerija-slike .div-slike {
+  width: 33%;
+}
+main #galerija #vidi-jos {
+  padding: 10px 24px;
+  border-radius: 24px;
+  letter-spacing: 0.8px;
+}
+main #galerija #vidi-jos:hover {
+  background-image: linear-gradient(to top right, #1C5E87, #2EC4B6);
+  background-size: 100%;
+  color: white;
+  box-shadow: 1px 2px 1px 1px #1C5E87;
+  transition: 0.25s;
+}
+main #galerija #vidi-jos:hover img {
+  filter: brightness(0) invert(1);
+}
+main #sekcija-iskustva {
+  background-image: linear-gradient(to top right, #1C5E87, #2EC4B6);
+  background-size: 100%;
+  color: white;
+  padding: 50px 0px;
+  margin: 50px 0px;
+}
+main #sekcija-iskustva #iskustva {
+  overflow: hidden;
+  width: 80%;
+  margin: 0px auto;
+  text-align: center;
+}
+main #sekcija-iskustva #iskustva .item {
+  background-color: white;
+  border-radius: 24px;
+  padding: 60px 0px;
+}
+main #sekcija-iskustva #iskustva img {
+  width: 100px;
+  margin: 0px auto;
+}
+
+.display-none {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

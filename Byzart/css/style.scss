@@ -1,0 +1,238 @@
+$text-color: #023436;
+$dark-blue: #1C5E87;
+$light-blue: #2EC4B6;
+$main-font: 'Poppins', sans-serif;
+$main-font-size: 18px;
+@mixin border-radius {
+    border-radius: 24px;
+}
+@mixin style-button {
+    padding: 10px 20px;
+    background-image: linear-gradient(to left, $light-blue, $dark-blue);
+    color: white;
+    @include border-radius();
+}
+@mixin gradient-blob {
+    background-image: linear-gradient(to right, $light-blue , $dark-blue);
+    border-radius: 33% 67% 29% 71% / 75% 47% 53% 25%;
+}
+@mixin gradient-text{
+    background-image: linear-gradient(to right, $light-blue, $dark-blue);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+@mixin shadow{
+    box-shadow: 1px 2px 1px 1px $dark-blue;
+    transition: 0.25s;
+}
+@mixin gradient-block{
+    background-image: linear-gradient(to top right, $dark-blue, $light-blue);
+    background-size: 100%;
+    color: white;
+}
+@mixin flex-centering {
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+}
+* {
+    padding: 0;
+    margin: 0;
+    font-family: $main-font;
+    color: $text-color;
+    font-size: $main-font-size;
+}
+.wrapper {
+    width: 85%;
+    margin: 0px auto;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+// Nav
+header nav ul{
+    display: flex;
+    li {
+        padding: 15px 15px;
+    }
+    :last-child {
+        padding-right: 0px;
+    }
+    a:hover {
+        @include gradient-text();
+    }
+}
+header nav {
+    display: flex;
+    justify-content: flex-end;
+}
+// Text
+header #hero{
+    padding: 50px 0px;
+    display: flex;
+    justify-content: space-between;
+    #main-heading {
+        width: 40%;
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        justify-content: center;
+        h1 {
+            font-size: 32px;
+        }
+        p {
+            margin: 10px 0px 30px 0px;
+        }
+        #heading-button {
+            a {
+                font-size: 20px;
+                font-weight: 500;
+                text-transform: capitalize;
+                @include style-button();
+                background-image: none;
+                color: $text-color;
+                border: 2.5px solid $text-color;
+            }
+            a:hover {
+                @include shadow();
+                @include gradient-block();
+            }
+        }
+    }
+    #heading-blob {
+        width: 45%;
+        height: 33vw;
+        background-image: linear-gradient(to right, $light-blue , $dark-blue);
+        border-radius: 71% 29% 37% 63% / 59% 25% 75% 41%;
+        @include flex-centering();
+        #heading-slider {
+            display: flex;
+            flex-direction: column;
+            #printed-products {
+                .img {
+                    width: 70%;
+                    height: 70%;
+                    margin: 0px auto;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+main {
+    #sekcija-usluge {
+        text-align: center;
+        h2 {
+            margin-bottom: 0px;
+        }
+        #usluge {
+            @include flex-centering();
+            justify-content: space-around;
+            height: 600px;
+            .usluge-blok {
+                width: 20%;
+                height: 70%;
+                border-radius: 33% 67% 29% 71% / 75% 47% 53% 25%;
+
+                transition: 1s;
+                .ikonica {
+                    height: 9vw;
+                    width: 9vw;
+                    margin: 5% auto;
+                }
+                #ikonica_1 img {
+                    height: 8vw;
+                    margin-top: 10px;
+                }
+                #ikonica_4 img {
+                    margin-top: 25px;
+                }
+                ul {
+                    width: 85%;
+                    margin: 10px auto;
+                    text-align: left;
+                    list-style-type: disc;
+                    li {
+                        font-size: 16px;
+                    }
+                }
+            }
+            .usluge-blok:hover {
+                @include gradient-block();
+                border-radius: 24px;
+                height: 80%;
+                img {
+                    transform: scale(1.1, 1.1);
+                    transition: 1s;
+                    @include gradient-text();
+                }
+                h3 {
+                    color: white;
+                    transition: 0.5s;
+                }
+                ul li {
+                    color: white;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+    #galerija {
+        text-align: center;
+        #galerija-slike {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            .div-slike {
+                width: 33%;
+            }
+        }
+        #vidi-jos {
+            padding: 10px 24px;
+            @include border-radius();
+            letter-spacing: 0.8px;
+        }
+        #vidi-jos:hover {
+            @include gradient-block();
+            @include shadow();
+            img {
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+    #sekcija-iskustva{
+        @include gradient-block();
+        padding: 50px 0px;
+        margin: 50px 0px;
+        #iskustva {
+            overflow: hidden;
+            width: 80%;
+            margin: 0px auto;
+            text-align: center;
+            .item {
+                background-color: white;
+                @include border-radius();
+                padding: 60px 0px;
+            }
+            img {
+                width: 100px;
+                margin: 0px auto;
+            }
+        }
+    }
+}
+.display-none {
+    display: none;
+}
