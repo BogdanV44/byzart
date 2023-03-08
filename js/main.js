@@ -10,13 +10,12 @@ const NIZFooterMaterijaliText = ["Main.js", "Sitemap", "Dokumentacija", "Github"
 const NIZFooterMaterijalHref = ["js/main.js", "#", "#", "https://github.com/BogdanV44"];
 
 var proizvodi = [];
-var proizvodiFiltrirani = [];
 window.onload = function() {
     ispisivanjeNavigacije();
-    if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
+    if (window.location.pathname === "/byzartstamparija/index.html" || window.location.pathname === "/") {
         ucitajPocetnu();
     }
-    else if(window.location.pathname === "/proizvodi.html") {
+    else if(window.location.pathname === "/byzartstamparija/proizvodi.html") {
         ajaxZahtev("tipStampe.json", function(rezultat){
             napraviCHBL(rezultat, "#tip-stampe", "tipStampe");
         })
@@ -31,25 +30,37 @@ window.onload = function() {
             proizvodi = rezultat;
         })
         $(document).on("change", "#filtriranje", function(){
-            var nizCheckedKategorije = this.querySelectorAll('input[type="checkbox"][name="kategorija"]:checked');
-            var nizCheckedTipStampe = this.querySelectorAll('input[type="checkbox"][name="tipStampe"]:checked');
-            if(nizCheckedKategorije.length == 0 && nizCheckedTipStampe.length==0) {
+            let nizKategorijeValue = [];
+            let nizTipStampeValue = [];
+
+            let nizCheckedKategorije = this.querySelectorAll('input[type="checkbox"][name="kategorija"]:checked');
+            let nizCheckedTipStampe = this.querySelectorAll('input[type="checkbox"][name="tipStampe"]:checked');
+
+            nizCheckedKategorije.forEach (input => {
+                nizKategorijeValue.push(Number(input.value));
+            })
+            nizCheckedTipStampe.forEach (input => {
+                nizTipStampeValue.push(Number(input.value));
+            })
+
+            console.log(nizKategorijeValue);
+            if(nizKategorijeValue.length == 0 && nizTipStampeValue.length==0) {
                 ispisiProizvode(proizvodi)
             }
-            else {
-                for(let proizvod of proizvodi) {
-                    let prosaoKrozKategoriju = false;
-                    for(let i=0; i<nizCheckedKategorije.length;i++) {
-                        if(proizvod.kategorija == nizCheckedKategorije[i].value && prosaoKrozKategoriju==false) {
-                            prosaoKrozKategoriju = true;
-                        }
-                    }
-                    //posto je svojstvo tip stampe niz:
-                    for(let i=0; i<nizCheckedTipStampe.length; i++) {
-                        console.log(proizvod.tipStampe);
-                    }                    
-                }
+            if(nizKategorijeValue != null || nizTipStampeValue != null) {
+                let proizvodiFiltrirani = [];
+                proizvodiFiltrirani = proizvodi.filter(proizvod => nizKategorijeValue.includes(proizvod.kategorija))
+                ispisiProizvode(proizvodiFiltrirani);
             }
+            // else {
+            //     for(let proizvod of proizvodi) {
+            //         for(let i=0; i<nizCheckedKategorije.length;i++) {
+            //             if(proizvod.kategorija == nizCheckedKategorije[i].value) {
+            //                 proizvodiFiltrirani.push(proizvod);
+            //             }
+            //         }           
+            //     }
+            // }
         })
     
     }   
