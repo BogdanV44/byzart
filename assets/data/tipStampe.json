@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "naziv": "Digitalna štampa"
+    },
+    {
+        "id": 2,
+        "naziv": "Offset štampa"
+    },
+    {
+        "id": 3,
+        "naziv": "Sito štampa"
+    },
+    {
+        "id": 4,
+        "naziv": "Preslikač"
+    },
+    {
+        "id": 5,
+        "naziv": "Sublimacija"
+    },
+    {
+        "id": 6,
+        "naziv": "Tampon"
+    },
+    {
+        "id": 7,
+        "naziv": "UV štampa"
+    }
+]

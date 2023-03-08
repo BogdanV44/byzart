@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "naziv": "Olovke"
+    },
+    {
+        "id": 2,
+        "naziv": "Kancelarija"
+    },
+    {
+        "id": 3,
+        "naziv": "Šolje"
+    },
+    {
+        "id": 4,
+        "naziv": "Tekstil"
+    },
+    {
+        "id": 5,
+        "naziv": "USB"
+    },
+    {
+        "id": 6,
+        "naziv": "Posteri i plakati"
+    }
+]

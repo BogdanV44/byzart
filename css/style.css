@@ -1,0 +1,630 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #023436;
+  font-size: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.wrapper, #wrapper-proizvodi {
+  width: 85%;
+  margin: 0px auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 3px;
+}
+
+header nav ul li {
+  padding: 15px 15px;
+}
+
+header nav ul :last-child {
+  padding-right: 0px;
+}
+
+header nav ul a:hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(#2EC4B6), to(#1C5E87));
+  background-image: linear-gradient(to right, #2EC4B6, #1C5E87);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+#meni {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#meni #logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#meni #logo p {
+  margin-left: 10px;
+}
+
+header #hero {
+  padding: 50px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header #hero #main-heading {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header #hero #main-heading h1 {
+  font-size: 26px;
+}
+
+header #hero #main-heading p {
+  margin: 10px 0px 30px 0px;
+}
+
+header #hero #main-heading #heading-button a {
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  background-image: -webkit-gradient(linear, right top, left top, from(#2EC4B6), to(#1C5E87));
+  background-image: linear-gradient(to left, #2EC4B6, #1C5E87);
+  color: white;
+  border-radius: 24px;
+  background-image: none;
+  color: #023436;
+  border: 2.5px solid #023436;
+}
+
+header #hero #main-heading #heading-button a:hover {
+  -webkit-box-shadow: 1px 2px 1px 1px #1C5E87;
+          box-shadow: 1px 2px 1px 1px #1C5E87;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#1C5E87), to(#2EC4B6));
+  background-image: linear-gradient(to top right, #1C5E87, #2EC4B6);
+  background-size: 100%;
+  color: white;
+}
+
+header #hero #heading-blob {
+  width: 45%;
+  height: 33vw;
+  background-image: -webkit-gradient(linear, left top, right top, from(#2EC4B6), to(#1C5E87));
+  background-image: linear-gradient(to right, #2EC4B6, #1C5E87);
+  border-radius: 71% 29% 37% 63% / 59% 25% 75% 41%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header #hero #heading-blob #heading-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header #hero #heading-blob #heading-slider #printed-products .img {
+  width: 70%;
+  height: 70%;
+  margin: 0px auto;
+}
+
+header #hero #heading-blob #heading-slider #printed-products .img img {
+  width: 100%;
+}
+
+main #sekcija-usluge {
+  text-align: center;
+}
+
+main #sekcija-usluge h2 {
+  margin-bottom: 0px;
+}
+
+main #sekcija-usluge #usluge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 600px;
+}
+
+main #sekcija-usluge #usluge .usluge-blok {
+  width: 20%;
+  height: 70%;
+  border-radius: 33% 67% 29% 71% / 75% 47% 53% 25%;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+main #sekcija-usluge #usluge .usluge-blok .ikonica {
+  height: 9vw;
+  width: 9vw;
+  margin: 5% auto;
+}
+
+main #sekcija-usluge #usluge .usluge-blok #ikonica_1 img {
+  height: 8vw;
+  margin-top: 10px;
+}
+
+main #sekcija-usluge #usluge .usluge-blok #ikonica_4 img {
+  margin-top: 25px;
+}
+
+main #sekcija-usluge #usluge .usluge-blok ul {
+  width: 85%;
+  margin: 10px auto;
+  text-align: left;
+  list-style-type: disc;
+}
+
+main #sekcija-usluge #usluge .usluge-blok ul li {
+  font-size: 16px;
+}
+
+main #sekcija-usluge #usluge .usluge-blok:hover {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#1C5E87), to(#2EC4B6));
+  background-image: linear-gradient(to top right, #1C5E87, #2EC4B6);
+  background-size: 100%;
+  color: white;
+  border-radius: 24px;
+  height: 80%;
+}
+
+main #sekcija-usluge #usluge .usluge-blok:hover img {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+
+main #sekcija-usluge #usluge .usluge-blok:hover h3 {
+  color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+main #sekcija-usluge #usluge .usluge-blok:hover ul li {
+  color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+main #sekcija-usluge p {
+  font-size: 16px;
+  -webkit-text-decoration: underline 2px;
+          text-decoration: underline 2px;
+  margin-bottom: 10px;
+}
+
+main #sekcija-usluge a {
+  padding: 10px 20px;
+  background-image: -webkit-gradient(linear, right top, left top, from(#2EC4B6), to(#1C5E87));
+  background-image: linear-gradient(to left, #2EC4B6, #1C5E87);
+  color: white;
+  border-radius: 24px;
+  font-size: 20px;
+}
+
+main #sekcija-usluge a:hover {
+  -webkit-box-shadow: 1px 2px 1px 1px #1C5E87;
+          box-shadow: 1px 2px 1px 1px #1C5E87;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+main #galerija {
+  text-align: center;
+}
+
+main #galerija h2 {
+  margin-top: 40px;
+}
+
+main #galerija #galerija-slike {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #galerija #galerija-slike .div-slike {
+  width: 33%;
+}
+
+main #galerija #vidi-jos {
+  padding: 10px 24px;
+  border-radius: 24px;
+  letter-spacing: 0.8px;
+}
+
+main #galerija #vidi-jos:hover {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#1C5E87), to(#2EC4B6));
+  background-image: linear-gradient(to top right, #1C5E87, #2EC4B6);
+  background-size: 100%;
+  color: white;
+  -webkit-box-shadow: 1px 2px 1px 1px #1C5E87;
+          box-shadow: 1px 2px 1px 1px #1C5E87;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+main #galerija #vidi-jos:hover img {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+
+main #sekcija-iskustva {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#1C5E87), to(#2EC4B6));
+  background-image: linear-gradient(to top right, #1C5E87, #2EC4B6);
+  background-size: 100%;
+  color: white;
+  padding: 50px 0px;
+  margin-top: 70px;
+}
+
+main #sekcija-iskustva h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 0px;
+}
+
+main #sekcija-iskustva #iskustva-p {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+main #sekcija-iskustva #iskustva {
+  overflow: hidden;
+  width: 80%;
+  margin: 0px auto;
+  text-align: center;
+}
+
+main #sekcija-iskustva #iskustva .item {
+  background-color: white;
+  border-radius: 24px;
+  padding: 40px 10px 60px 10px;
+}
+
+main #sekcija-iskustva #iskustva img {
+  width: 100px;
+  margin: 0px auto;
+  margin-bottom: 30px;
+}
+
+.owl-carousel {
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+
+.display-none {
+  display: none;
+}
+
+footer {
+  height: auto;
+  background-color: #1C5E87;
+  padding-top: 20px;
+}
+
+footer #sadrzaj-footer {
+  height: auto;
+  padding: 50px 0px;
+  border-top: 5px solid white;
+}
+
+footer #sadrzaj-footer #sadrzaj-footer-blokovi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0px 200px;
+}
+
+footer #sadrzaj-footer #sadrzaj-footer-blokovi div h3, footer #sadrzaj-footer #sadrzaj-footer-blokovi div ul li {
+  color: white;
+  font-size: 16px;
+}
+
+footer #sadrzaj-footer #sadrzaj-footer-blokovi div h3 a, footer #sadrzaj-footer #sadrzaj-footer-blokovi div ul li a {
+  color: white;
+}
+
+footer #sadrzaj-footer #sadrzaj-footer-blokovi div h3 a:hover, footer #sadrzaj-footer #sadrzaj-footer-blokovi div ul li a:hover {
+  color: #2EC4B6;
+}
+
+footer #copyright {
+  padding: 20px 0px;
+  background-color: #0e3d5a;
+}
+
+footer #copyright p {
+  color: white;
+  text-align: center;
+  font-size: 13px;
+}
+
+#wrapper-proizvodi {
+  width: 70%;
+  min-height: 100vh;
+}
+
+#proizvodi-h1 {
+  font-size: 24px;
+  text-align: right;
+}
+
+#stranica-proizvodi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#stranica-proizvodi #filtriranje {
+  width: 20%;
+}
+
+#stranica-proizvodi #filtriranje .filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px;
+}
+
+#stranica-proizvodi #filtriranje #boje {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#stranica-proizvodi #filtriranje #boje a {
+  height: 30px;
+  width: 60px;
+  margin: 2.5px 2.5px 0px 0px;
+  border: 1.5px solid #023436;
+}
+
+#stranica-proizvodi #desni-deo {
+  width: 80%;
+  padding-left: 20px;
+}
+
+#stranica-proizvodi #desni-deo #sortiranje {
+  text-align: right;
+}
+
+#stranica-proizvodi #desni-deo #proizvodi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#stranica-proizvodi #desni-deo #proizvodi .proizvod {
+  width: 30%;
+  background-color: rgba(249, 248, 251, 0.891);
+  margin: 10px;
+  text-align: center;
+  border-radius: 32px;
+  min-height: 300px;
+}
+
+#stranica-proizvodi #desni-deo #proizvodi .proizvod .cena {
+  position: absolute;
+  margin-top: 25px;
+  text-align: left;
+  padding: 7px 10px 7px 40px;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#1C5E87), to(#2EC4B6));
+  background-image: linear-gradient(to top right, #1C5E87, #2EC4B6);
+  background-size: 100%;
+  color: white;
+}
+
+#stranica-proizvodi #desni-deo #proizvodi .proizvod .proizvod-content {
+  padding: 15px;
+  padding-bottom: 5px;
+}
+
+#stranica-proizvodi #desni-deo #proizvodi .proizvod .proizvod-content .naziv-proizvoda {
+  font-size: 18px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#stranica-proizvodi #desni-deo #proizvodi .proizvod img {
+  width: 80%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#stranica-proizvodi #desni-deo #proizvodi .proizvod .div-nije-na-stanju {
+  position: relative;
+}
+
+#stranica-proizvodi #desni-deo #proizvodi .proizvod .p-nije-na-stanju {
+  font-size: 12px;
+  padding-bottom: 8px;
+}
+
+#stranica-proizvodi #desni-deo #proizvodi .proizvod .a-nije-na-stanju {
+  padding: 7px 20px;
+  border: 1.5px solid #1C5E87;
+}
+
+#stranica-proizvodi #desni-deo #proizvodi .proizvod .a-nije-na-stanju:hover {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#1C5E87), to(#2EC4B6));
+  background-image: linear-gradient(to top right, #1C5E87, #2EC4B6);
+  background-size: 100%;
+  color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#stranica-proizvodi #desni-deo #proizvodi .proizvod:hover img {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#stranica-proizvodi #desni-deo #proizvodi .proizvod:hover .naziv-proizvoda {
+  background-image: -webkit-gradient(linear, left top, right top, from(#2EC4B6), to(#1C5E87));
+  background-image: linear-gradient(to right, #2EC4B6, #1C5E87);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#autor-glavni-div {
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#autor-sekcija {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-image: -webkit-gradient(linear, left top, right top, from(#2EC4B6), to(#1C5E87));
+  background-image: linear-gradient(to right, #2EC4B6, #1C5E87);
+  border-radius: 33% 67% 29% 71% / 75% 47% 53% 25%;
+  padding: 50px;
+  height: 70vh;
+}
+
+#autor-sekcija #autor-slika {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px;
+}
+
+#autor-sekcija #autor-slika img {
+  width: 100%;
+  margin: 0px auto;
+  border-bottom: 12px solid #1C5E87;
+  border-radius: 50%;
+}
+
+#autor-sekcija #autor-tekst {
+  width: 50%;
+  font-size: 18px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#autor-sekcija #autor-tekst p, #autor-sekcija #autor-tekst h2 {
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */

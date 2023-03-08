@@ -1,0 +1,45 @@
+[
+    
+    {
+        "id": 1,
+        "naziv": {
+            "naziv": "Crna",
+            "nazivZaFilter": "black"
+        }
+    },
+    {
+        "id": 2,
+        "naziv": {
+            "naziv": "Bela",
+            "nazivZaFilter": "white"
+        }
+    },
+    {
+        "id":3,
+        "naziv": {
+            "naziv": "Zelena",
+            "nazivZaFilter": "green"
+        }
+    },
+    {
+        "id": 4,
+        "naziv": {
+            "naziv": "Crvena",
+            "nazivZaFilter": "red"
+        }
+    },
+    {
+        "id": 5,
+        "naziv": {
+            "naziv": "Žuta",
+            "nazivZaFilter": "yellow"
+        }
+    },
+    {
+        "id": 6,
+        "naziv": {
+            "naziv": "Narandžasta",
+            "nazivZaFilter": "orange"
+        }
+    }
+]
