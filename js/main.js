@@ -12,7 +12,7 @@ const NIZFooterMaterijalHref = ["js/main.js", "#", "#", "https://github.com/Bogd
 var proizvodi = [];
 window.onload = function() {
     ispisivanjeNavigacije();
-    if (window.location.pathname === "/byzart/index.html" || window.location.pathname === "/") {
+    if (window.location.pathname == "/byzart/index.html" || window.location.pathname == "/byzart/") {
         ucitajPocetnu();
     }
     else if(window.location.pathname === "/byzart/proizvodi.html") {
