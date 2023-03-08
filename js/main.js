@@ -12,10 +12,10 @@ const NIZFooterMaterijalHref = ["js/main.js", "#", "#", "https://github.com/Bogd
 var proizvodi = [];
 window.onload = function() {
     ispisivanjeNavigacije();
-    if (window.location.pathname === "/byzartstamparija/index.html" || window.location.pathname === "/") {
+    if (window.location.pathname === "/byzart/index.html" || window.location.pathname === "/") {
         ucitajPocetnu();
     }
-    else if(window.location.pathname === "/byzartstamparija/proizvodi.html") {
+    else if(window.location.pathname === "/byzart/proizvodi.html") {
         ajaxZahtev("tipStampe.json", function(rezultat){
             napraviCHBL(rezultat, "#tip-stampe", "tipStampe");
         })
