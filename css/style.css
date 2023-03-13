@@ -480,7 +480,16 @@ footer #copyright p {
 }
 
 #stranica-proizvodi #desni-deo #sortiranje {
-  text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#stranica-proizvodi #desni-deo #sortiranje #sort-ddl {
+  margin-left: 8px;
 }
 
 #stranica-proizvodi #desni-deo #proizvodi {
