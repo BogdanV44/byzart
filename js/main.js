@@ -1,8 +1,8 @@
 const BAZNIURL_JSON = "assets/data/";
 const BAZNIURL_PROIZVODI = "assets/img/proizvodi/"
 // Nav
-const NIZGlavniMeniText = ["Početna", "Proizvodi", "Kontakt", "Autor"];
-const NIZGlavniMeniHref = ["index.html", "proizvodi.html", "kontakt.html", "autor.html"];
+const NIZGlavniMeniText = ["Početna", "Proizvodi", "Autor"];
+const NIZGlavniMeniHref = ["index.html", "proizvodi.html", "autor.html"];
 // Footer
 const NIZFooterKontaktText = ["Byzart digital print", "Račkog 6, 11000 Beograd", "tel/fax: +381 11 2766 081", "e-mail: print@bzyart.net"];
 const NIZFooterRadnoVremeText = ["Ponedeljak-Petak: 09h-20h", "Subota: 10h-15h", "Nedelja: Ne radimo"]
@@ -10,12 +10,13 @@ const NIZFooterMaterijaliText = ["Main.js", "Sitemap", "Dokumentacija", "Github"
 const NIZFooterMaterijalHref = ["js/main.js", "#", "#", "https://github.com/BogdanV44"];
 
 var proizvodi = [];
+let proizvodiFiltrirani = [];
 window.onload = function() {
     ispisivanjeNavigacije();
-    if (window.location.pathname == "/byzart/index.html" || window.location.pathname == "/byzart/") {
+    if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
         ucitajPocetnu();
     }
-    else if(window.location.pathname === "/byzart/proizvodi.html") {
+    else if(window.location.pathname === "/proizvodi.html") {
         ajaxZahtev("tipStampe.json", function(rezultat){
             napraviCHBL(rezultat, "#tip-stampe", "tipStampe");
         })
@@ -30,37 +31,25 @@ window.onload = function() {
             proizvodi = rezultat;
         })
         $(document).on("change", "#filtriranje", function(){
-            let nizKategorijeValue = [];
-            let nizTipStampeValue = [];
-
-            let nizCheckedKategorije = this.querySelectorAll('input[type="checkbox"][name="kategorija"]:checked');
-            let nizCheckedTipStampe = this.querySelectorAll('input[type="checkbox"][name="tipStampe"]:checked');
-
-            nizCheckedKategorije.forEach (input => {
-                nizKategorijeValue.push(Number(input.value));
-            })
-            nizCheckedTipStampe.forEach (input => {
-                nizTipStampeValue.push(Number(input.value));
-            })
-
-            console.log(nizKategorijeValue);
-            if(nizKategorijeValue.length == 0 && nizTipStampeValue.length==0) {
-                ispisiProizvode(proizvodi)
+            filtriranjeOnChange();
+            let value = document.querySelector("#sort-list-proizvodi").value;
+            if(value != 0) {
+                if(proizvodiFiltrirani.length == 0) {
+                    sortiraj(proizvodi);
+                } 
+                else {
+                    sortiraj(proizvodiFiltrirani);
+                }
             }
-            if(nizKategorijeValue != null || nizTipStampeValue != null) {
-                let proizvodiFiltrirani = [];
-                proizvodiFiltrirani = proizvodi.filter(proizvod => nizKategorijeValue.includes(proizvod.kategorija))
-                ispisiProizvode(proizvodiFiltrirani);
+        })
+        ucitajProdavnicu();
+        $(document).on("change", "#sort-list-proizvodi", function(){
+            if(proizvodiFiltrirani.length == 0) {
+                sortiraj(proizvodi);
+            } 
+            else {
+                sortiraj(proizvodiFiltrirani);
             }
-            // else {
-            //     for(let proizvod of proizvodi) {
-            //         for(let i=0; i<nizCheckedKategorije.length;i++) {
-            //             if(proizvod.kategorija == nizCheckedKategorije[i].value) {
-            //                 proizvodiFiltrirani.push(proizvod);
-            //             }
-            //         }           
-            //     }
-            // }
         })
     
     }   
@@ -315,6 +304,44 @@ function ucitajPocetnu() {
     // }
     // insertKaoPrviChild("", "#sekcija-usluge", "h2");
 }
+function ucitajProdavnicu() {
+    let nizSortNaziv = ["Naziv rastući", "Naziv opadajući", "Cena rastuća", "Cena opadajuća", "Najnoviji"];
+    let nizSortValue = ["nazivAZ", "nazivZA", "cenaRast", "cenaOp", "najnovije"];
+
+    napraviDDL(nizSortNaziv, nizSortValue, "#sort-ddl", "sort-list-proizvodi");
+}
+function filtriranjeOnChange() {
+    let divFilter = document.querySelector("#filtriranje");
+    let nizKategorijeValue = [];
+    let nizTipStampeValue = [];
+
+    let nizCheckedKategorije = divFilter.querySelectorAll('input[type="checkbox"][name="kategorija"]:checked');
+    let nizCheckedTipStampe = divFilter.querySelectorAll('input[type="checkbox"][name="tipStampe"]:checked');
+
+    nizCheckedKategorije.forEach (input => {
+        nizKategorijeValue.push(Number(input.value));
+    })
+    nizCheckedTipStampe.forEach (input => {
+        nizTipStampeValue.push(Number(input.value));
+    })
+
+    if(nizCheckedKategorije.length == 0 && nizCheckedTipStampe.length==0) {
+        ispisiProizvode(proizvodi)
+        proizvodiFiltrirani = [];
+    }
+    else if(nizKategorijeValue.length != 0) {
+
+        proizvodiFiltrirani = proizvodi.filter(proizvod => nizKategorijeValue.includes(proizvod.kategorija))
+
+        ispisiProizvode(proizvodiFiltrirani);
+        if (nizTipStampeValue.length > 0) {
+            ispisiProizvodeTipStampe(nizTipStampeValue, proizvodiFiltrirani);  
+        }
+    }
+    else {
+        ispisiProizvodeTipStampe(nizTipStampeValue, proizvodi);
+    }
+}
 
 // -FUNKCIJE-
 // AJAX Call Back funkcija
@@ -410,4 +437,59 @@ function ispisiProizvode(nizProizvoda) {
     }
     document.querySelector("#proizvodi").innerHTML = div;
 }
-// ispis proizvoda na osnovu change event
+
+function ispisiProizvodeTipStampe (niz, nizProizvoda) {
+    let drugiStepenPrzFilt = [];
+    for(let proizvod of nizProizvoda) {
+        // da se nebi pravili duplikati kada je čekirano više tipa štampe u koje proizvod spada
+        let vecPrikazan = false;
+        for(let i=0;i<proizvod.tipStampe.length;i++){
+
+            let idTipaStampe = proizvod.tipStampe[i];
+
+            if(niz.includes(idTipaStampe) && vecPrikazan == false){
+                drugiStepenPrzFilt.push(proizvod);
+                vecPrikazan = true;
+            }
+        }
+    }
+    ispisiProizvode(drugiStepenPrzFilt);   
+}
+
+function napraviDDL(nizNaziv, nizValue, idtDiva, idSelect) {
+    let select = document.createElement("select");
+    select.setAttribute("id", idSelect);
+
+    let optionIzb = document.createElement("option");
+    optionIzb.setAttribute("value", 0);
+    optionIzb.textContent = "Izaberite...";
+    select.appendChild(optionIzb);
+    for(let i = 0; i<nizNaziv.length; i++) {
+        let option = document.createElement("option");
+        
+        option.setAttribute("value", nizValue[i]);
+        option.textContent = nizNaziv[i];
+        select.appendChild(option);
+    }
+    document.querySelector(idtDiva).appendChild(select);
+}
+
+function sortiraj(niz) {
+    let value = document.querySelector("#sort-list-proizvodi").value;
+    if(value == "nazivAZ") {
+        niz = niz.sort((a,b) => a.naziv>b.naziv? 1 : -1);
+    }
+    else if (value == "nazivZA") {
+        niz = niz.sort((a,b) => a.naziv<b.naziv? 1 : -1);
+    }
+    else if(value == "cenaRast") {
+        niz = niz.sort((a,b) => a.cena.bezStampe>b.cena.bezStampe? 1 : -1);
+    }
+    else if(value == "cenaOp") {
+        niz = niz.sort((a,b) => a.cena.bezStampe<b.cena.bezStampe? 1 : -1);
+    }
+    else if(value == "najnovije") {
+        niz = niz.sort((a,b) => a.id<b.id? 1 : -1);
+    }
+    ispisiProizvode(niz);
+}
