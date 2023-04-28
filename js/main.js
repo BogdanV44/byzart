@@ -14,7 +14,7 @@ let proizvodiFiltrirani = [];
 let nizProizvodaJSON = [];
 
 window.onload = function() {
-    let location = window.location.pathname;
+    let location = "/byzart" + window.location.pathname;
     ispisivanjeNavigacije();
     if (location === "/index.html" || location === "/") {
         ucitajPocetnu();
