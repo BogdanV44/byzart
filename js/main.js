@@ -14,12 +14,12 @@ let proizvodiFiltrirani = [];
 let nizProizvodaJSON = [];
 
 window.onload = function() {
-    let location = "/byzart" + window.location.pathname;
+    let location = window.location.pathname;
     ispisivanjeNavigacije();
-    if (location === "/index.html" || location === "/") {
+    if (location === "/byzart/index.html" || location === "/byzart/") {
         ucitajPocetnu();
     }
-    else if(location === "/proizvodi.html") {
+    else if(location === "/byzart/proizvodi.html") {
         ajaxZahtev("tipStampe.json", function(rezultat){
             napraviCHBL(rezultat, "#tip-stampe", "tipStampe");
         })
@@ -64,7 +64,7 @@ window.onload = function() {
         })
 
     }
-    else if (location === "/obavesti.html") {
+    else if (location === "/byzart/obavesti.html") {
         let proizvodiLS = dohvatiPodatakLS("proizvodiObavestiMe");
         //ispisiProizvode(proizvodiLS, "#proizvodi-obavesti-me");
         if(proizvodiLS.length != 0) {
@@ -84,7 +84,7 @@ window.onload = function() {
         // provera da li su obrisani svi proizvodi
     }
 
-    else if (location === "/kontakt.html") {
+    else if (location === "/byzart/kontakt.html") {
         document.querySelector("#btnKontakt").addEventListener("click", function(e){
             let ime, email, poruka, rb, vrednostRb = "";
             ime = $("#tbIme");
