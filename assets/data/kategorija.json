@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "naziv": "Olovke"
+    },
+    {
+        "id": 2,
+        "naziv": "Kancelarija"
+    },
+    {
+        "id": 3,
+        "naziv": "Šolje"
+    },
+    {
+        "id": 4,
+        "naziv": "Tekstil"
+    },
+    {
+        "id": 5,
+        "naziv": "Cegeri"
+    },
+    {
+        "id": 6,
+        "naziv": "Privesci"
+    },
+    {
+        "id": 7,
+        "naziv": "Kućni setovi"
+    },
+    {
+        "id": 8,
+        "naziv": "Poklon kese"
+    }
+]
