@@ -16,10 +16,10 @@ let nizProizvodaJSON = [];
 window.onload = function() {
     let location = window.location.pathname;
     ispisivanjeNavigacije();
-    if (location === "/index.html" || location === "/") {
+    if (location === "/byzart/index.html" || location === "/byzart/") {
         ucitajPocetnu();
     }
-    else if(location === "/proizvodi.html") {
+    else if(location === "/byzart/proizvodi.html") {
         ajaxZahtev("tipStampe.json", function(rezultat){
             napraviCHBiliRBlistu("checkbox", rezultat, "#tip-stampe", "tipStampe");
         })
@@ -66,7 +66,7 @@ window.onload = function() {
             }
         })
     }
-    else if (location === "/proizvod.html") {
+    else if (location === "/byzart/proizvod.html") {
         var urlParams = new URLSearchParams(window.location.search);
 
         var id = urlParams.get("id");
@@ -80,7 +80,7 @@ window.onload = function() {
             dugme = document.querySelector(".dugme-nije-na-stanju");
         });
     }
-    else if (location === "/obavesti.html") {
+    else if (location === "/byzart/obavesti.html") {
         let proizvodiLS = dohvatiPodatakLS("proizvodiObavestiMe");
 
         let emailLS = dohvatiPodatakLS("emailObavestiMe");
@@ -121,12 +121,10 @@ window.onload = function() {
                 error.style.fontWeight = "500";
                 error.style.fontSize = "14px";
             }
-            
-            //upisiPodatakLS("email", email.val)
         })
     }
 
-    else if (location === "/kontakt.html") {
+    else if (location === "/byzart/kontakt.html") {
         document.querySelector("#btnKontakt").addEventListener("click", function(e){
             let ime, email, poruka, rb, vrednostRb = "";
             ime = $("#tbIme");
