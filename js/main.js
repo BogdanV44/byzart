@@ -663,7 +663,7 @@ function ispisiProizvodeObavesti(nizProizvoda) {
         for(let proizvod of nizProizvoda) {
             div += `<tr>
                         <td>${rednibroj}</td>
-                        <td><img src='../assets/img/proizvodi/${proizvod.slika}' alt='${proizvod.naziv}'/></td>
+                        <td><img src='../byzart/assets/img/proizvodi/${proizvod.slika}' alt='${proizvod.naziv}'/></td>
                         <td>${proizvod.naziv}</td>
                         <td>
                             <div class="ukloni">
